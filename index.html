@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--  手机：不允许用户放大页面  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1,
+    maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>xxx的简历</title>
+</head>
+
+<body>
+    <style id="style"></style>
+    <div id="html"></div>
+    <div id="divwrapper">
+        <div id="div1"></div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::before {
+            box-sizing: border-box;
+        }
+
+        *::after {
+            box-sizing: border-box;
+        }
+
+        #html {
+            /*   自动换行  */
+            word-break: break-all;
+
+        }
+
+        #div1 {
+            position: fixed;
+            left: 70%;
+            top: 20px;
+        }
+
+        /*  伪元素,伪元素里面不能嵌套伪元素  */
+        #div1::before {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        #div1::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        /*  媒体查询，区分手机和电脑  */
+        @media (max-width:500px) {
+            #html {
+                height: 70vh;
+                overflow: auto;
+            }
+
+            #divwrapper {
+                height: 30vh;
+            }
+
+            #div1 {
+                position: relative;
+                top: 0;
+                left: 25%;
+            }
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+
+</html>
